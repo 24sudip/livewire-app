@@ -15,6 +15,7 @@ Auth::routes();
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->name('home');
+    Route::get('/eight', 'eight');
     Route::get('/seven', 'seven');
     Route::get('/six', 'six');
     Route::get('/five', 'five');

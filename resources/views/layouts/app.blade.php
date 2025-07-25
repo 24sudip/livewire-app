@@ -66,6 +66,11 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="/eight" wire:current="active fw-bold" wire:navigate>
+                                    {{ __('Eight') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/seven" wire:current="active fw-bold" wire:navigate>
                                     {{ __('Seven') }}
                                 </a>
@@ -116,8 +121,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -143,9 +148,9 @@
             console.log("call init");
             $('[data-toggle="tooltip"]').tooltip();
         });
+        document.addEventListener("livewire:initialized", () => {
+            console.log("call initialized");
+        });
     </script>
-    {{-- document.addEventListener("livewire:initialized", () => {
-        console.log("call initialized");
-    }); --}}
 </body>
 </html>

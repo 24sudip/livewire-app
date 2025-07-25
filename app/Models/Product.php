@@ -17,5 +17,14 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class, 'category_product', 'product_id', 'category_id');
     }
+    /**
+     * Get all of the variants for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function variants()
+    {
+        return $this->hasMany(Variant::class);
+    }
 }
 
